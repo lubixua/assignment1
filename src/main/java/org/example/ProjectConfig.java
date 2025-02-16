@@ -15,4 +15,10 @@ public class ProjectConfig {
         return book1;
     }
 
+    @Bean
+    Library library() {
+        var library1 = new Library();
+        library1.setLibraryName("The British Library");
+        return library1;
+    }
 }

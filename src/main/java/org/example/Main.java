@@ -8,5 +8,10 @@ public class Main {
         var context = new AnnotationConfigApplicationContext(ProjectConfig.class);
         Book book1 = context.getBean(Book.class);
         System.out.printf("Title: %s\nAuthor: %s\nYear: %d", book1.getTitle(), book1.getAuthor(), book1.getYear());
+
+        System.out.println();
+
+        Library library = context.getBean(Library.class);
+        System.out.println(library.getLibraryName());
     }
 }
