@@ -34,6 +34,6 @@ public class Book {
 
     @Override
     public String toString() {
-        return String.format("%s wasnpublished by %s in %d", title, author, year);
+        return String.format("%s. The book was published by %s in %d. ", title, author, year);
     }
 }
