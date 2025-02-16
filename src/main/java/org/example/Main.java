@@ -6,12 +6,10 @@ import org.springframework.context.annotation.Bean;
 public class Main {
     public static void main(String[] args) {
         var context = new AnnotationConfigApplicationContext(ProjectConfig.class);
-        Book book1 = context.getBean(Book.class);
-        System.out.printf("Title: %s\nAuthor: %s\nYear: %d", book1.getTitle(), book1.getAuthor(), book1.getYear());
-
-        System.out.println();
-
+        Book book1 = context.getBean("book2", Book.class);
         Library library = context.getBean(Library.class);
+
         System.out.println(library.getLibraryName());
+        System.out.println(library.getBook());
     }
 }

@@ -31,4 +31,9 @@ public class Book {
     public void setYear(int year) {
         this.year = year;
     }
+
+    @Override
+    public String toString() {
+        return String.format("%s wasnpublished by %s in %d", title, author, year);
+    }
 }
