@@ -2,19 +2,20 @@ package org.example;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import java.util.List;
 
 @Component
 public class Library {
     private String libraryName;
-    private Book book;
+    private List<Book> books;
 
-    public Book getBook() {
-        return book;
+    public List<Book> getBooks() {
+        return books;
     }
 
     @Autowired
-    public void setBook(Book book) {
-        this.book = book;
+    public void setBooks(List<Book> books) {
+        this.books = books;
     }
 
     public String getLibraryName() {
@@ -23,5 +24,11 @@ public class Library {
 
     public void setLibraryName(String libraryName) {
         this.libraryName = libraryName;
+    }
+
+    public void showBooks() {
+        for(Book book : books) {
+            System.out.println(book);
+        }
     }
 }

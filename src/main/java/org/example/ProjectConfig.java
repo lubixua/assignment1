@@ -6,6 +6,8 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 
+import java.util.Arrays;
+
 @Configuration
 public class ProjectConfig {
 
@@ -29,10 +31,19 @@ public class ProjectConfig {
     }
 
     @Bean
+    Book book3() {
+        var book3 = new Book();
+        book3.setAuthor("Hemingway");
+        book3.setTitle("The Old Man and the Sea");
+        book3.setYear(1952);
+        return book3;
+    }
+
+    @Bean
     Library library() {
         Library library1 = new Library();
         library1.setLibraryName("The British Library");
-        library1.setBook(book());
+        library1.setBooks(Arrays.asList(book(), book2(), book3()));
         return library1;
     }
 }
